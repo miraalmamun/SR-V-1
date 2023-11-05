@@ -10,9 +10,17 @@ public class TestCaseOne {
     @Test
     public void testOne()
     {
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
+
+        // Set Chrome options for running in headless mode
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--no-sandbox");
+
+        // Initialize the ChromeDriver with the given options
+        WebDriver driver = new ChromeDriver(options);
         driver.get("https://google.com");
+        System.out.println("Title: " + driver.getTitle()); // Print the page title
         driver.quit();
     }
 }
