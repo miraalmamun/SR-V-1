@@ -20,7 +20,20 @@ public class TestCaseOne {
         // Initialize the ChromeDriver with the given options
         WebDriver driver = new ChromeDriver(options);
         driver.get("https://google.com");
-        System.out.println("***************************Title: " + driver.getTitle()); // Print the page title
+        System.out.println("*************FIRST**************Title: " + driver.getTitle()); // Print the page title
         driver.quit();
     }
+
+    @Test
+    public void testSecond()
+    {
+
+
+        // Initialize the ChromeDriver with the given options
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://google.com");
+        System.out.println("********SECOND*******************Title: " + driver.getTitle()); // Print the page title
+        driver.quit();
+    }
+
 }
